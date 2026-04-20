@@ -1,0 +1,41 @@
+package com.hamida.myapplication;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    TextView txt1, txt2;
+    Button btnClick, btnSubmit;
+    EditText edtName;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        txt1 = findViewById(R.id.txt1);
+        txt2=findViewById(R.id.txt2);
+        btnClick=findViewById(R.id.btnClick);
+        btnSubmit=findViewById(R.id.btnSubmit);
+        edtName=findViewById(R.id.edtName);
+
+        btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this , MainActivity2.class);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+}
